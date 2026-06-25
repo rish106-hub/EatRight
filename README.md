@@ -28,7 +28,29 @@ Claude Code also reads `CLAUDE.md`. Codex reads `AGENTS.md` automatically.
 
 ## Repository pack
 
-This starter pack contains the product contract, architecture, source-verified Swiggy MCP notes, agent work protocol, role prompts, research plan, threat model, and initial task board. It intentionally contains no application code yet.
+This repository contains the product contract, architecture, source-verified Swiggy MCP notes, agent work protocol, role prompts, research plan, threat model, initial task board, and bootstrap application shell.
+
+## Bootstrap commands
+
+FMD-001 adds a pnpm TypeScript workspace and a minimal Next.js shell under `apps/web`.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm check
+pnpm --filter @finish-my-dinner/web dev
+```
+
+Default local runtime is safe:
+
+```text
+APP_ENV=local
+MCP_ENV=stub
+CAPABILITY_LEVEL=read_only
+ALLOW_REAL_SWIGGY_MUTATIONS=false
+ALLOW_REAL_SWIGGY_ORDERS=false
+```
+
+`pnpm check` runs formatting, lint, typecheck, unit tests, and build. Preview CI is configured for `MCP_ENV=stub` and read-only capability only.
 
 ## Swiggy documentation
 
