@@ -59,6 +59,12 @@ importers:
         specifier: 4.1.13
         version: 4.1.13
 
+  packages/providers-stub:
+    dependencies:
+      "@finish-my-dinner/contracts":
+        specifier: workspace:*
+        version: link:../contracts
+
 packages:
   "@emnapi/runtime@1.11.1":
     resolution:
