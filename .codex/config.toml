@@ -1,0 +1,9 @@
+# Project defaults for EatRight. Codex loads project config only after the repo is trusted.
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+model_verbosity = "medium"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[features]
+multi_agent = true
