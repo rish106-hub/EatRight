@@ -1,0 +1,75 @@
+.github/pull_request_template.md
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-21
+.gitignore
+  s_975d93a8f49add::t_f428b44ac84ed6 11
+pnpm-workspace.yaml
+  s_975d93a8f49add::t_6413615f08713c 4-7
+  s_975d93a8f49add::t_c88a32625f9840 8
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-3
+  s_975d93a8f49add::t_1dd3e3d30aef62 9-10
+.prettierignore
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-7
+apps/web/tests/runtime-config.test.ts
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-4,6-12,14-22,24-31,34-40,43-49,52-58,61-68,71-81,84-86,88-98,100-101,106-108
+  s_975d93a8f49add::t_a4fa51079f4038 5,13,23,32-33,41-42,50-51,59-60,69-70,82-83,87,99,102-105
+apps/web/src/app/api/health/route.ts
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-4,6-18,20-21
+  s_975d93a8f49add::t_a4fa51079f4038 5,19
+.github/workflows/ci.yml
+  s_975d93a8f49add::t_e50ca4ff4be29b 42
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-41
+apps/web/tsconfig.json
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-22
+.env.example
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-18
+apps/web/next.config.mjs
+  s_975d93a8f49add::t_a4fa51079f4038 3
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-2,4-6
+tsconfig.base.json
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-20
+README.md
+  s_975d93a8f49add::t_1275c48b0af4c1 31
+  s_975d93a8f49add::t_54205ae4d2c3d3 33-53
+  s_975d93a8f49add::t_24792edd458ef0 32
+eslint.config.mjs
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-28
+package.json
+  s_975d93a8f49add::t_e50ca4ff4be29b 12
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-11,13-28
+apps/web/src/app/layout.tsx
+  s_975d93a8f49add::t_a4fa51079f4038 8
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-7,9-19
+apps/web/src/lib/runtime-config.ts
+  s_975d93a8f49add::t_a4fa51079f4038 3-8,10-14,53-55,57,63-70,80,90,92,97-99,131-133,135-137,150-152,168-172
+  s_975d93a8f49add::t_ecd2ef19747c9d 91
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-2,9,15-52,56,58-62,71-79,81-89,93-96,100-130,134,138-149,153-167,173
+apps/web/src/app/page.tsx
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-11,14-32
+  s_975d93a8f49add::t_a4fa51079f4038 12-13
+apps/web/next-env.d.ts
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-2,4
+  s_975d93a8f49add::t_40cb14162e933e 3,5-6
+apps/web/package.json
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-10,12-19
+  s_975d93a8f49add::t_02007dcfb9c876 11
+apps/web/src/app/styles.css
+  s_975d93a8f49add::t_d11837fdf8dc9c 1-88
+pnpm-lock.yaml
+  s_975d93a8f49add::t_d189730aead706 1-3106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.1",
+  "base_commit_sha": "0baeb0636507df2a7c47b18871e095b0e42d0316",
+  "prompts": {},
+  "sessions": {
+    "s_975d93a8f49add": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019efebd-bc50-7151-b726-808a2bcb66f6",
+        "model": "gpt-5.5"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
