@@ -1,0 +1,105 @@
+apps/web/src/features/meal-request/screens/AddressScreen.tsx
+  s_6fc76028b6b7d5::t_34ef38c9d4d02c 1-66
+apps/web/package.json
+  s_6fc76028b6b7d5::t_0455da08393e68 14,19-25
+apps/web/src/components/StepProgress.tsx
+  s_6fc76028b6b7d5::t_d4f27573ecec8e 1-4,12-32
+  s_6fc76028b6b7d5::t_888c6004f3011c 5-11
+apps/web/src/app/start/page.tsx
+  s_6fc76028b6b7d5::t_ccf3b82e4d9da4 1-9
+apps/web/src/app/styles.css
+  s_6fc76028b6b7d5::t_19f50513cae089 2-4,11-62,76-77,82,104,107-108,127,133-527,530-576
+  s_6fc76028b6b7d5::t_faedfe4a8eab93 117
+apps/web/src/components/StatusRegion.tsx
+  s_6fc76028b6b7d5::t_a3ac3862df8748 1-8,15-18
+  s_6fc76028b6b7d5::t_888c6004f3011c 9-14
+apps/web/src/features/meal-request/screens/IntroScreen.tsx
+  s_6fc76028b6b7d5::t_16c1893e2f44e6 1-44
+apps/web/src/features/meal-request/draft.ts
+  s_6fc76028b6b7d5::t_1c2a6194b0bcfe 1-39
+apps/web/src/features/meal-request/MealRequestFlow.tsx
+  s_6fc76028b6b7d5::t_b33b3a794d9515 1-57
+apps/web/src/features/meal-request/home-components.ts
+  s_6fc76028b6b7d5::t_bf85365b46f679 1-34
+apps/web/src/components/ScreenHeading.tsx
+  s_6fc76028b6b7d5::t_709a9452645e0e 1-27
+apps/web/src/features/meal-request/sample-addresses.ts
+  s_6fc76028b6b7d5::t_494bdb4116fb52 1-16
+apps/web/src/features/meal-request/confidence.ts
+  s_6fc76028b6b7d5::t_888c6004f3011c 1-4,11-13,16-18
+  s_6fc76028b6b7d5::t_314960a7ed427a 5-10,14-15,19-60
+apps/web/src/features/meal-request/build-request.ts
+  s_6fc76028b6b7d5::t_d306b9538ee5b9 1-20,24-86
+  s_6fc76028b6b7d5::t_888c6004f3011c 21-23
+apps/web/src/features/meal-request/screens/HomeStateScreen.tsx
+  s_6fc76028b6b7d5::t_888c6004f3011c 3,39-41
+  s_6fc76028b6b7d5::t_c8b38149a663da 1-2,4-38,42-155
+apps/web/src/features/meal-request/screens/SuccessScreen.tsx
+  s_6fc76028b6b7d5::t_df75babbb200c2 1-56
+apps/web/tests/meal-request/home-components.test.ts
+  s_6fc76028b6b7d5::t_a9f2f2718feda7 1-48
+apps/web/tests/meal-request/confidence.test.ts
+  s_6fc76028b6b7d5::t_701b071175eb2a 1-45
+apps/web/vitest.config.ts
+  s_6fc76028b6b7d5::t_c836b0a5c4314f 2-6,12-18
+  s_6fc76028b6b7d5::t_b7bf6d27fa7bd0 1,7-11
+apps/web/tests/meal-request/validation.test.ts
+  s_6fc76028b6b7d5::t_a3ff89f8b28f8e 1-66
+apps/web/src/components/SegmentedControl.tsx
+  s_6fc76028b6b7d5::t_0d379eb071db9e 1-55
+apps/web/src/components/NumberField.tsx
+  s_6fc76028b6b7d5::t_cd998d4341aad6 1-73
+apps/web/src/components/FieldError.tsx
+  s_6fc76028b6b7d5::t_3a8de525e4931e 1-4,12-23
+  s_6fc76028b6b7d5::t_27f117748390bb 5-11
+apps/web/src/features/meal-request/ids.ts
+  s_6fc76028b6b7d5::t_202cbea8d44ae5 1-21
+apps/web/src/components/ExclusionsInput.tsx
+  s_6fc76028b6b7d5::t_6bf433ac8d3bd5 1-101
+apps/web/next.config.mjs
+  s_6fc76028b6b7d5::t_d285e59f6a02ec 4
+apps/web/tests/meal-request/build-request.test.ts
+  s_6fc76028b6b7d5::t_da242a3fa55adf 11,15
+  s_6fc76028b6b7d5::t_fb2baebd4410a4 1-3,8-10,12-14,16-26,31-67,73-85
+  s_6fc76028b6b7d5::t_888c6004f3011c 4-7,27-30,68-72
+apps/web/tests/meal-request/flow.test.tsx
+  s_6fc76028b6b7d5::t_5ced5ec46c82ce 1-26,33-62,66-87,91-112,116-130,134-135,138-155
+  s_6fc76028b6b7d5::t_888c6004f3011c 27-32,63-65,88-90,113-115,131-133,136-137
+apps/web/src/components/ChipToggle.tsx
+  s_6fc76028b6b7d5::t_26a89f33a62d22 1-29
+apps/web/src/features/meal-request/validation.ts
+  s_6fc76028b6b7d5::t_888c6004f3011c 14-15,36-39
+  s_6fc76028b6b7d5::t_e5f9789c4bd02b 1,3-5
+  s_6fc76028b6b7d5::t_4a994620e8d15f 52
+  s_6fc76028b6b7d5::t_74155ed97c9462 2,6-13,16-35,40-51,53
+apps/web/src/features/meal-request/reducer.ts
+  s_6fc76028b6b7d5::t_9ffc27d2f9d771 1-59,64-80,85,90-134
+  s_6fc76028b6b7d5::t_888c6004f3011c 60-63,81-84,86-89
+apps/web/tests/meal-request/intro-screen.test.tsx
+  s_6fc76028b6b7d5::t_8ef6f9dc825949 1-23
+apps/web/src/features/meal-request/context.tsx
+  s_6fc76028b6b7d5::t_bdd1444d957bc3 1-9,16-24,30-43
+  s_6fc76028b6b7d5::t_888c6004f3011c 10-15,25-29
+apps/web/vitest.setup.ts
+  s_6fc76028b6b7d5::t_8220c695b5250f 1-7
+apps/web/src/features/meal-request/screens/ReviewScreen.tsx
+  s_6fc76028b6b7d5::t_323ba9591a5994 1-120
+pnpm-lock.yaml
+  s_6fc76028b6b7d5::t_23fcdedbf12e9a 39,43-45,48,58-73,82-283,852-870,877-882,1190-1260,1394-1402,1469-1475,1482-1488,1496-1502,1509-1521,1529-1534,1541-1548,1561-1575,1596-1602,1629-1635,1642-1647,1655-1667,1674-1680,1693-1699,1705-1718,1726-1771,1778-1791,1800-1806,1953-1959,1968-1994,2016-2022,2030-2078,2107-2113,2128-2133,2140-2145,2153-2172,2191-2198,2225-2249,2256-2283,2341-2353,2389-2394,2457-2463,2479-2491,2499-2505,2521-2545,2552-2558,2613-2619,2650-2655,2683-2709,2756-2764,2851-2886,2910-2943,2958-3101,3344-3355,3358-3362,3470-3527,3642-3652,3698-3699,3707-3708,3713-3714,3717-3722,3725-3726,3729-3730,3740-3752,3759-3763,3777-3780,3783-3784,3791-3797,3800-3804,3809-3810,3813-3816,3820-3837,3840-3850,3880-3881,3982-3989,3993-4014,4023-4024,4027-4058,4070-4071,4078-4079,4082-4083,4088-4117,4124-4125,4141-4150,4155-4164,4179,4187,4202-4205,4229-4232,4259-4264,4272-4275,4278-4282,4316-4325,4328-4329,4378-4381,4384,4388-4389,4395-4396,4408-4421,4447-4452,4469,4493,4507-4523,4535-4542
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.1",
+  "base_commit_sha": "c3fc1636ebf183a86c3c7636be01428fe9f0e53a",
+  "prompts": {},
+  "sessions": {
+    "s_6fc76028b6b7d5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4dfb1df3-3e91-497e-914c-297416110fc2",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
