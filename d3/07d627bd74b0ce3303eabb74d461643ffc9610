@@ -1,0 +1,31 @@
+docs/architecture/STUB_PROVIDERS.md
+  s_b1918d54dd42e9::t_c8851c42ab6585 1-80
+packages/providers-stub/package.json
+  s_b1918d54dd42e9::t_c8851c42ab6585 1-18
+packages/providers-stub/tsconfig.json
+  s_b1918d54dd42e9::t_c8851c42ab6585 1-7
+packages/providers-stub/src/index.ts
+  s_b1918d54dd42e9::t_52504d403d575b 181,186,189,805-809
+  s_b1918d54dd42e9::t_c8851c42ab6585 1-180,182-185,187-188,190-804,810-940
+  s_b1918d54dd42e9::t_5a7ad536f8a77a 941-951
+packages/providers-stub/src/providers-stub.test.ts
+  s_b1918d54dd42e9::t_c8851c42ab6585 1-237,239-241,243-247,249-253,255-259,261,263-302
+  s_b1918d54dd42e9::t_2682dba7d05d9b 238,242,248,254,260,262
+  s_b1918d54dd42e9::t_e6595e82a1ba90 303-314
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.1",
+  "base_commit_sha": "d307d627bd74b0ce3303eabb74d461643ffc9610",
+  "prompts": {},
+  "sessions": {
+    "s_b1918d54dd42e9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019efeee-2f5f-7201-a702-2d683f830f0d",
+        "model": "gpt-5.5"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
