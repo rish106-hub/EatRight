@@ -43,6 +43,12 @@ importers:
       "@finish-my-dinner/contracts":
         specifier: workspace:*
         version: link:../../packages/contracts
+      "@finish-my-dinner/planner":
+        specifier: workspace:*
+        version: link:../../packages/planner
+      "@finish-my-dinner/providers-stub":
+        specifier: workspace:*
+        version: link:../../packages/providers-stub
       next:
         specifier: 16.0.10
         version: 16.0.10(@babel/core@7.29.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
