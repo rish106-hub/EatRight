@@ -1,0 +1,22 @@
+{
+  "name": "@finish-my-dinner/planner",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@finish-my-dinner/contracts": "workspace:*",
+    "zod": "4.1.13"
+  },
+  "devDependencies": {
+    "@finish-my-dinner/providers-stub": "workspace:*"
+  }
+}
