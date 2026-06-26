@@ -1,0 +1,63 @@
+apps/web/src/features/recommendation/AtHomeSection.tsx
+  s_bd5f7702ecaaa2::t_84d734ecf0b2fe 1-10
+apps/web/src/features/recommendation/EstimateSummary.tsx
+  s_bd5f7702ecaaa2::t_e5251434de7ed8 1-45
+apps/web/src/features/recommendation/index.ts
+  s_bd5f7702ecaaa2::t_62443ae9ca8410 1-24
+apps/web/src/features/recommendation/RecommendationOutcome.tsx
+  s_bd5f7702ecaaa2::t_520c87d5cfe7c3 1-14,19-64,66-74,77-79
+  s_bd5f7702ecaaa2::t_6a5238eacad3f4 15-18,65,75-76
+apps/web/src/features/recommendation/RecommendationCard.tsx
+  s_bd5f7702ecaaa2::t_3833b9d5512c3c 81
+  s_bd5f7702ecaaa2::t_e01d6ad223a19a 16-19,60-64,68-72
+  s_bd5f7702ecaaa2::t_c71e9fcafd2ee1 1-3,5-15,20-29,38-43,48-59,65-67,73-80,82-85,89-106,108-111
+  s_bd5f7702ecaaa2::t_2456e02898664d 4,30-37,44-47,86-88,107
+apps/web/package.json
+  s_bd5f7702ecaaa2::t_b878df20fd93a0 15
+apps/web/src/features/recommendation/OutcomeMessage.tsx
+  s_bd5f7702ecaaa2::t_e01d6ad223a19a 13-16,93
+  s_bd5f7702ecaaa2::t_732f4c3c4b3800 3-4
+  s_bd5f7702ecaaa2::t_e8885815ce2cb9 8-11,20-38,89-92,109-110
+  s_bd5f7702ecaaa2::t_5900ed7eb6d131 1-2,5-7,12,17-19,39-88,94-108,111-128
+apps/web/src/app/styles.css
+  s_bd5f7702ecaaa2::t_e85d3e4c5918ee 577-848
+apps/web/src/features/recommendation/WhyThisOptionDisclosure.tsx
+  s_bd5f7702ecaaa2::t_9a5c9deffe1190 5-16,47-61
+  s_bd5f7702ecaaa2::t_c8df0d08bf77af 1-4,17-46,62-66
+apps/web/src/features/recommendation/AssumptionList.tsx
+  s_bd5f7702ecaaa2::t_a50c2d3efe53fe 1-35
+apps/web/src/features/recommendation/fixtures.ts
+  s_bd5f7702ecaaa2::t_92e12dce754f5f 1-278
+apps/web/tests/recommendation/recommendation-outcome.test.tsx
+  s_bd5f7702ecaaa2::t_a7a239e17d66a4 1
+  s_bd5f7702ecaaa2::t_3a58fa5e755c33 447,459-462
+  s_bd5f7702ecaaa2::t_e01d6ad223a19a 80-81,97-98,216,247-249,293-294,321-322,335-337,440-442,470,489
+  s_bd5f7702ecaaa2::t_d86e0aa8a47c33 2-79,82-96,99-130,132-198,200-215,217-246,250-292,295-320,323-333,339-439,443-446,448-458,463-469,471-488,490-519
+  s_bd5f7702ecaaa2::t_b13cd0d63c1a8f 334,338
+  s_bd5f7702ecaaa2::t_1473bf232cc5bd 131
+  s_bd5f7702ecaaa2::t_b9dbee717581f6 199
+apps/web/src/features/recommendation/AddSection.tsx
+  s_bd5f7702ecaaa2::t_f4d7bda284b56e 1-31
+apps/web/src/features/recommendation/RecommendationActions.tsx
+  s_bd5f7702ecaaa2::t_09fe42b236dab4 1-54
+apps/web/src/features/recommendation/ProviderStatus.tsx
+  s_bd5f7702ecaaa2::t_9d362dbe4fd2d9 1-36
+pnpm-lock.yaml
+  s_bd5f7702ecaaa2::t_d074ccc7afdde5 46-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.1",
+  "base_commit_sha": "6983d26b8524c68506917a9446c171af6a2430ee",
+  "prompts": {},
+  "sessions": {
+    "s_bd5f7702ecaaa2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32b793aa-a8dc-4cd8-bb45-dd4d11760af5",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
