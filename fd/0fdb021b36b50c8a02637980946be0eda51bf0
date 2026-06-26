@@ -1,0 +1,48 @@
+apps/web/src/server/meal-completion/logger.ts
+  s_2113462f8483a3::t_b48ec8862b01a0 1-24
+docs/architecture/READ_ONLY_API.md
+  s_2113462f8483a3::t_02602ab810b63b 26
+  s_2113462f8483a3::t_82b1bc754061f1 1-25,27-155
+apps/web/src/server/meal-completion/demo-addresses.ts
+  s_2113462f8483a3::t_b48ec8862b01a0 1-63
+apps/web/src/server/meal-completion/handler.ts
+  s_2113462f8483a3::t_ec75e4d189add7 2-5,143-146,232-235,267-270,276
+  s_2113462f8483a3::t_b48ec8862b01a0 1,6-142,147-180,182-185,197-208,210-231,236-266,271-275,277-283
+  s_2113462f8483a3::t_02602ab810b63b 181
+  s_2113462f8483a3::t_814fbeff33776a 186-192
+  s_2113462f8483a3::t_7a724575038128 193-196,209
+apps/web/tests/meal-completion/api.test.ts
+  s_2113462f8483a3::t_3b31e6128cf393 1,3,8,13-33,35-37,39-44,47-60,62-64,67-139,141-143,146-159,161-163,166-337,344,346-347,349-351,353-357,359-374,376-379,381-392,395-403,408-428
+  s_2113462f8483a3::t_55759e0110cde5 2,4-7,338-343,345,348,352,358,375,380,393-394,407
+  s_2113462f8483a3::t_02602ab810b63b 34
+  s_2113462f8483a3::t_09e78e34d07a2d 9-12
+  s_2113462f8483a3::t_ec75e4d189add7 404-406
+  s_2113462f8483a3::t_69ca49f6611e5c 38,45-46,61,65-66,140,144-145,160,164-165
+apps/web/src/server/meal-completion/schema.ts
+  s_2113462f8483a3::t_02602ab810b63b 23
+  s_2113462f8483a3::t_b48ec8862b01a0 1-22,24-67
+apps/web/src/app/api/meal-completion/route.ts
+  s_2113462f8483a3::t_b48ec8862b01a0 1-5
+apps/web/package.json
+  s_2113462f8483a3::t_3b31e6128cf393 15-16
+apps/web/src/server/meal-completion/capabilities.ts
+  s_2113462f8483a3::t_b48ec8862b01a0 1-56
+pnpm-lock.yaml
+  s_2113462f8483a3::t_4a69c877f0096d 46-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "fd0fdb021b36b50c8a02637980946be0eda51bf0",
+  "prompts": {},
+  "sessions": {
+    "s_2113462f8483a3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f040a-e0b2-74c1-8a34-433601763833",
+        "model": "gpt-5.5"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
