@@ -3,17 +3,34 @@ import type {
   HomeComponent,
   MealWeight,
 } from "@finish-my-dinner/contracts";
+import type { PlannerOutcome } from "@finish-my-dinner/planner";
+import type { MealCompletionClientResult } from "@/features/demo-flow/api-client";
 import { buildCompletionRequest, type RequestIds } from "./build-request";
 import type { QuantityCorrection } from "./confidence";
 import { initialDraft, type MealRequestDraft } from "./draft";
 import { hasErrors, validateHomeState } from "./validation";
 
-export type FlowStep = "intro" | "address" | "home" | "review" | "success";
+export type FlowStep =
+  | "intro"
+  | "address"
+  | "home"
+  | "review"
+  | "submitting"
+  | "outcome"
+  | "api-error";
+
+export type FlowFailure = Exclude<
+  MealCompletionClientResult,
+  { status: "success" }
+>;
 
 export interface FlowState {
   step: FlowStep;
   draft: MealRequestDraft;
   request: import("@finish-my-dinner/contracts").CompletionRequest | null;
+  outcome: PlannerOutcome | null;
+  failure: FlowFailure | null;
+  submitAttempt: number;
   showHomeErrors: boolean;
 }
 
@@ -32,6 +49,10 @@ export type FlowAction =
   | { type: "SET_QUANTITY_CORRECTION"; value: QuantityCorrection }
   | { type: "SUBMIT_HOME" }
   | { type: "CONFIRM_REVIEW"; ids: RequestIds }
+  | { type: "SUBMISSION_SUCCEEDED"; outcome: PlannerOutcome }
+  | { type: "SUBMISSION_FAILED"; failure: FlowFailure }
+  | { type: "RETRY_SUBMISSION" }
+  | { type: "CORRECT_INPUT" }
   | { type: "RESET" };
 
 export function initialFlowState(): FlowState {
@@ -39,6 +60,9 @@ export function initialFlowState(): FlowState {
     step: "intro",
     draft: initialDraft(),
     request: null,
+    outcome: null,
+    failure: null,
+    submitAttempt: 0,
     showHomeErrors: false,
   };
 }
@@ -124,7 +148,49 @@ export function flowReducer(state: FlowState, action: FlowAction): FlowState {
         // Validation failed at the contract boundary → send user back to fix input.
         return { ...state, step: "home", showHomeErrors: true };
       }
-      return { ...state, request: result.request, step: "success" };
+      return {
+        ...state,
+        request: result.request,
+        outcome: null,
+        failure: null,
+        step: "submitting",
+        submitAttempt: state.submitAttempt + 1,
+      };
+    }
+    case "SUBMISSION_SUCCEEDED":
+      return {
+        ...state,
+        outcome: action.outcome,
+        failure: null,
+        step: "outcome",
+      };
+    case "SUBMISSION_FAILED":
+      return {
+        ...state,
+        outcome: null,
+        failure: action.failure,
+        step: "api-error",
+      };
+    case "RETRY_SUBMISSION": {
+      if (state.request === null) {
+        return { ...state, step: "review" };
+      }
+      return {
+        ...state,
+        outcome: null,
+        failure: null,
+        step: "submitting",
+        submitAttempt: state.submitAttempt + 1,
+      };
+    }
+    case "CORRECT_INPUT": {
+      return {
+        ...state,
+        outcome: null,
+        failure: null,
+        step: "home",
+        showHomeErrors: false,
+      };
     }
     case "RESET":
       return initialFlowState();

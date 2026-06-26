@@ -46,7 +46,6 @@ export function RecommendationOutcome({
   onStartOver,
   onCorrectInput,
   onViewWhy,
-  onStandardSwiggyHandoff,
 }: RecommendationOutcomeProps) {
   const parsed = plannerOutcomeSchema.safeParse(outcome);
 
@@ -73,7 +72,6 @@ export function RecommendationOutcome({
       onStartOver={onStartOver}
       onCorrectInput={onCorrectInput}
       {...(onViewWhy ? { onViewWhy } : {})}
-      {...(onStandardSwiggyHandoff ? { onStandardSwiggyHandoff } : {})}
     />
   );
 }

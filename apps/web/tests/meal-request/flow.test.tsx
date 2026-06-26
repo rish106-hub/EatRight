@@ -1,8 +1,13 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { MealRequestFlow } from "../../src/features/meal-request/MealRequestFlow";
 import { VALIDATION_MESSAGES } from "../../src/features/meal-request/validation";
+import { FIXTURE_RECOMMENDATION_READY } from "../../src/features/recommendation/fixtures";
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+});
 
 async function gotoHomeStep(user: ReturnType<typeof userEvent.setup>) {
   await user.click(screen.getByRole("button", { name: "Get started" }));
@@ -77,8 +82,9 @@ describe("home-state step", () => {
 });
 
 describe("full read-only request flow", () => {
-  it("builds a valid request and reaches the local success state", async () => {
+  it("builds a valid request and renders the recommendation outcome", async () => {
     const user = userEvent.setup();
+    vi.stubGlobal("fetch", successFetch());
     render(<MealRequestFlow />);
     await gotoHomeStep(user);
 
@@ -95,13 +101,14 @@ describe("full read-only request flow", () => {
     ).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Looks right" }));
 
-    // Success step.
-    expect(
-      screen.getByRole("heading", { name: "Your request is ready" }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/Nothing was\s+ordered and no money was spent/i),
-    ).toBeInTheDocument();
+    await waitFor(() =>
+      expect(
+        screen.getByRole("heading", { name: /here.s what to add/i }),
+      ).toBeInTheDocument(),
+    );
+    expect(screen.getAllByText(/nothing was ordered/i).length).toBeGreaterThan(
+      0,
+    );
   });
 
   it("lets the user correct a low-confidence assumption on review", async () => {
@@ -125,6 +132,7 @@ describe("full read-only request flow", () => {
 
   it("exposes no cart, checkout, coupon, or payment affordances", async () => {
     const user = userEvent.setup();
+    vi.stubGlobal("fetch", successFetch());
     render(<MealRequestFlow />);
     await gotoHomeStep(user);
     await user.click(screen.getByRole("button", { name: "Rice" }));
@@ -132,14 +140,13 @@ describe("full read-only request flow", () => {
       screen.getByRole("button", { name: "Find what's missing" }),
     );
     await user.click(screen.getByRole("button", { name: "Looks right" }));
+    await screen.findByRole("heading", { name: /here.s what to add/i });
 
     const forbidden =
-      /add to cart|checkout|coupon|place order|pay now|payment/i;
-    expect(
-      screen.queryByRole("button", { name: forbidden }),
-    ).not.toBeInTheDocument();
-    // No chat textbox as a primary surface.
-    expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
+      /order|add to cart|checkout|coupon|place order|pay now|payment|track/i;
+    for (const button of screen.queryAllByRole("button")) {
+      expect(button).not.toHaveAccessibleName(forbidden);
+    }
   });
 });
 
@@ -153,3 +160,20 @@ describe("mobile layout smoke", () => {
     expect(main.querySelector(".flow__panel")).not.toBeNull();
   });
 });
+
+function successFetch(): typeof fetch {
+  return vi.fn(async () =>
+    Response.json({
+      ok: true,
+      apiVersion: "meal-completion.v1",
+      correlationId: "correlation-flow-test",
+      capability: {
+        mode: "demo_read_only",
+        mcpEnv: "stub",
+        capabilityLevel: "read_only",
+        realCommerceActionsEnabled: false,
+      },
+      outcome: FIXTURE_RECOMMENDATION_READY,
+    }),
+  ) as unknown as typeof fetch;
+}

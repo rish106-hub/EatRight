@@ -10,10 +10,7 @@ type NonReadyOutcome = Exclude<
   { status: "RECOMMENDATION_READY" }
 >;
 
-interface OutcomeMessageProps extends Omit<
-  RecommendationActionsProps,
-  "showHandoff"
-> {
+interface OutcomeMessageProps extends RecommendationActionsProps {
   outcome: NonReadyOutcome;
 }
 
@@ -79,10 +76,8 @@ export function OutcomeMessage({
   onStartOver,
   onCorrectInput,
   onViewWhy,
-  onStandardSwiggyHandoff,
 }: OutcomeMessageProps) {
   const { heading, body } = outcomeContent(outcome);
-  const isHandoff = outcome.status === "STANDARD_SWIGGY_HANDOFF_REQUIRED";
   const isNoPurchase = outcome.status === "NO_PURCHASE_REQUIRED";
 
   return (
@@ -107,8 +102,6 @@ export function OutcomeMessage({
           onStartOver={onStartOver}
           onCorrectInput={onCorrectInput}
           {...(onViewWhy ? { onViewWhy } : {})}
-          {...(onStandardSwiggyHandoff ? { onStandardSwiggyHandoff } : {})}
-          showHandoff={isHandoff}
         />
       )}
 

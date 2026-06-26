@@ -426,40 +426,36 @@ describe("BOTH_PROVIDERS_FAILED", () => {
 // ── 14. STANDARD_SWIGGY_HANDOFF_REQUIRED ──────────────────────────────────────
 
 describe("STANDARD_SWIGGY_HANDOFF_REQUIRED", () => {
-  it("renders handoff callback button when provided without performing navigation", async () => {
-    const user = userEvent.setup();
-    const onHandoff = vi.fn();
+  it("renders read-only handoff messaging without an active external button", () => {
     render(
       <RecommendationOutcome
         outcome={FIXTURE_STANDARD_SWIGGY_HANDOFF}
         onStartOver={noop}
         onCorrectInput={noop}
-        onStandardSwiggyHandoff={onHandoff}
       />,
     );
-    const handoffBtn = screen.getByRole("button", {
-      name: /search on swiggy/i,
-    });
-    await user.click(handoffBtn);
-    expect(onHandoff).toHaveBeenCalledOnce();
+    expect(
+      screen.getByRole("heading", { name: /you may need a full meal/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /search on swiggy/i }),
+    ).not.toBeInTheDocument();
   });
 
-  it("fires the callback and does not submit a form when handoff is clicked", async () => {
-    const user = userEvent.setup();
-    const onHandoff = vi.fn();
+  it("still offers only local recovery actions", () => {
     render(
       <RecommendationOutcome
         outcome={FIXTURE_STANDARD_SWIGGY_HANDOFF}
         onStartOver={noop}
         onCorrectInput={noop}
-        onStandardSwiggyHandoff={onHandoff}
       />,
     );
-    await user.click(screen.getByRole("button", { name: /search on swiggy/i }));
-    expect(onHandoff).toHaveBeenCalledOnce();
-    // The button is type="button" so no form submission occurs
-    const btn = screen.getByRole("button", { name: /search on swiggy/i });
-    expect(btn).toHaveAttribute("type", "button");
+    expect(
+      screen.getByRole("button", { name: /correct input/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /start over/i }),
+    ).toBeInTheDocument();
   });
 });
 
