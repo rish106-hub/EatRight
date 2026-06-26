@@ -78,6 +78,19 @@ importers:
         specifier: 4.1.13
         version: 4.1.13
 
+  packages/planner:
+    dependencies:
+      "@finish-my-dinner/contracts":
+        specifier: workspace:*
+        version: link:../contracts
+      zod:
+        specifier: 4.1.13
+        version: 4.1.13
+    devDependencies:
+      "@finish-my-dinner/providers-stub":
+        specifier: workspace:*
+        version: link:../providers-stub
+
   packages/providers-stub:
     dependencies:
       "@finish-my-dinner/contracts":
