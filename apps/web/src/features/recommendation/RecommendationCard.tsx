@@ -13,10 +13,7 @@ import type { RecommendationActionsProps } from "./RecommendationActions";
 
 type ReadyOutcome = Extract<PlannerOutcome, { status: "RECOMMENDATION_READY" }>;
 
-interface RecommendationCardProps extends Omit<
-  RecommendationActionsProps,
-  "showHandoff" | "onStandardSwiggyHandoff"
-> {
+interface RecommendationCardProps extends RecommendationActionsProps {
   outcome: ReadyOutcome;
 }
 

@@ -4,28 +4,15 @@ export interface RecommendationActionsProps {
   onStartOver: () => void;
   onCorrectInput: () => void;
   onViewWhy?: () => void;
-  onStandardSwiggyHandoff?: () => void;
-  showHandoff?: boolean;
 }
 
 export function RecommendationActions({
   onStartOver,
   onCorrectInput,
   onViewWhy,
-  onStandardSwiggyHandoff,
-  showHandoff = false,
 }: RecommendationActionsProps) {
   return (
     <div className="actions rec-actions">
-      {showHandoff && onStandardSwiggyHandoff && (
-        <button
-          type="button"
-          className="button button--primary"
-          onClick={onStandardSwiggyHandoff}
-        >
-          Search on Swiggy
-        </button>
-      )}
       <button
         type="button"
         className="button button--quiet"
