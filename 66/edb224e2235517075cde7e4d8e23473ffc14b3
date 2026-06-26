@@ -1,0 +1,51 @@
+packages/planner/src/schema.ts
+  s_547e555df60e97::t_a2132da0ef3907 1-13,19-117,119-146,149-151,153-197
+  s_547e555df60e97::t_7ede8d3c910e66 147-148,152
+  s_547e555df60e97::t_4045110e31634a 14-18,118
+packages/planner/tsconfig.json
+  s_547e555df60e97::t_a2132da0ef3907 1-7
+packages/planner/src/filter.ts
+  s_547e555df60e97::t_7ede8d3c910e66 116-122,134-140,142-148,150-156
+  s_547e555df60e97::t_1ca2bfad2a3e8c 1-115,123-133,141,149,157-182
+packages/planner/src/score.ts
+  s_547e555df60e97::t_1ca2bfad2a3e8c 1-37,42-104,108-122,126-127,132-175
+  s_547e555df60e97::t_7ede8d3c910e66 38-41,105-107,123-125,128-131
+packages/planner/src/planner.test.ts
+  s_547e555df60e97::t_7ede8d3c910e66 329-331,340-342,421-423
+  s_547e555df60e97::t_f4a79974588ea1 1-16,18-134,136-214,219-300,304-328,332-339,343-420,424-427,429,431-466,468-592
+  s_547e555df60e97::t_5520cd10d4cce7 17,135,215-218,301-303,428,430,467
+packages/planner/src/index.ts
+  s_547e555df60e97::t_09e020d4103ba5 12,31,534,564
+  s_547e555df60e97::t_7ede8d3c910e66 157-162,171-174,176,273-274,448-451,496-500,502-506,514-518,520-524,541-545,548-550,553-556,565-569,572-576,579-581,584-588
+  s_547e555df60e97::t_849d35f84f2fdd 1-11,13-30,32-156,163-170,175,177-272,275-447,452-495,501,507-513,519,525-533,535-540,546-547,551-552,557-563,570-571,577-578,582-583,589-607
+packages/planner/src/derive.ts
+  s_547e555df60e97::t_c3ddaa9103295b 1-151
+packages/planner/src/search.ts
+  s_547e555df60e97::t_a55b0a699aa4f8 42-48,151,165-170
+  s_547e555df60e97::t_518cfe6bc4845d 120-124
+  s_547e555df60e97::t_2b7c700020ad62 1-41,49-119,125-150,152-164,171-187
+docs/architecture/PLANNER.md
+  s_547e555df60e97::t_eb4b797fca1e40 1-222
+packages/planner/package.json
+  s_547e555df60e97::t_a2132da0ef3907 1-22
+packages/planner/src/queries.ts
+  s_547e555df60e97::t_c3ddaa9103295b 1-21
+pnpm-lock.yaml
+  s_547e555df60e97::t_04e7bc9a03cd69 81-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.1",
+  "base_commit_sha": "66edb224e2235517075cde7e4d8e23473ffc14b3",
+  "prompts": {},
+  "sessions": {
+    "s_547e555df60e97": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f0236-cea4-7061-a476-2390b6c8705e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
