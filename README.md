@@ -1,182 +1,244 @@
 # Finish My Dinner
 
-**Finish My Dinner** is a mobile-first PWA prototype for a specific dinner problem: the user already has part of a meal at home, but not enough to make dinner feel complete.
+**Finish My Dinner** is a product prototype for one recurring weekday problem: people often have *some* food at home, but not a complete dinner.
 
-Instead of opening a food marketplace and starting from restaurants, cuisines, or cravings, the product starts from the user's home-food state and recommends the smallest useful missing component from **Swiggy Food** or **Swiggy Instamart**.
+The product does not ask, "What are you craving?" It asks, "What do you already have, and what is the smallest useful thing Swiggy can add to complete dinner?"
 
-> Product thesis: complete the plate, do not replace the meal.
+## One-Line Thesis
 
-## Current Stage
+Swiggy can win more routine weekday dinners by completing the food users already have at home, instead of always selling a full replacement meal.
 
-| Area | Status |
+## The Problem
+
+For many young working professionals, dinner is not a high-intent discovery moment. It is a low-attention recovery moment after office, commute, gym, chores, or late calls.
+
+The user often has a partial meal:
+
+- Rice but no curry.
+- Dal but no rotis.
+- Leftover biryani, but not enough.
+- Eggs and bread, but no side.
+- Curd, snacks, or staples, but no satisfying dinner.
+
+At that point, the user does not want a full marketplace session. They want dinner to become obvious.
+
+Current options create avoidable friction:
+
+| User option | Why it fails |
 | --- | --- |
-| Product maturity | Pre-validation |
-| Active milestone | `M0_READ_ONLY_VALIDATION` |
-| Product surface | Mobile-first PWA |
-| Commerce capability | Read-only discovery only |
-| Runtime data source | Local deterministic MCP stub |
-| Real cart/order actions | Not allowed |
+| Eat the incomplete meal | Low satisfaction, low nutrition confidence, feels like compromise |
+| Order a full meal | Higher spend, food waste, duplicates what is already at home |
+| Browse Swiggy manually | Too many choices when attention is lowest |
+| Search recipes | Assumes cooking energy and ingredients |
+| Use tiffins or fixed meal plans | Solves planning, but removes flexibility |
 
-The current milestone exists to validate whether the partial-meal problem is frequent, painful, and commercially meaningful before introducing cart mutation, checkout, payment, or live ordering risk.
+The unmet need is **dependable, low-effort dinner completion**.
 
-## Problem
+## Locked Product Bet
 
-Weekday dinner decisions often happen when attention is lowest. A target user may already have rice, dal, rotis, eggs, bread, leftovers, curd, snacks, or one cooked component at home, but still lack a satisfactory dinner.
+Finish My Dinner starts from the user's home-food state and recommends **one** missing complement from either Swiggy Food or Instamart.
 
-The default alternatives are weak:
+It should feel less like browsing restaurants and more like completing a plate.
 
-- Eat an incomplete meal.
-- Order a full replacement meal and waste what is already available.
-- Browse Swiggy manually for a complement.
-- Overthink whether to cook, order, snack, or defer dinner.
+Examples:
 
-The product problem is not generic food discovery. It is **low-effort routine dinner completion**.
+| At home | Missing job | Recommendation |
+| --- | --- | --- |
+| Rice and curd | Add a warm main | Rajma or chole from Food |
+| Dal | Add a base and freshness | Ready rotis plus salad from Instamart |
+| Leftover biryani | Increase quantity without replacing meal | Kebab side from Food |
+| Bread and eggs | Make it dinner, not breakfast | Soup or protein side from Instamart |
+| Nothing useful | Exit partial-meal mode | Recommend standard dinner flow instead |
+
+The product should return a completed dinner assembly, not a feed, recipe list, or generic recommendation carousel.
 
 ## Target User
 
-Initial ICP:
+Primary ICP:
 
-- 22-32-year-old corporate workers in Bangalore, Hyderabad, Pune, Gurugram, or Noida.
-- Single, PG, shared-flat, hybrid, or early-career professionals.
-- Eats dinner at home or semi-at-home on weekdays.
-- Often has one usable food component but not a complete meal.
-- Uses Swiggy and is comfortable with bounded, explicit-assent commerce.
+- 22-32-year-old corporate workers.
+- Lives in Bangalore, Hyderabad, Pune, Gurugram, or Noida.
+- Single, PG, shared-flat, hybrid, or early-career professional.
+- Uses Swiggy at least monthly.
+- Often has staples, leftovers, or one cooked component at home.
+- Wants dinner with minimal effort, cost, and waste.
 
-Excluded from the first validation:
+Primary decision window:
 
-- Families of four or more.
-- Severe allergies or medically controlled diets.
-- Users seeking autonomous ordering.
-- Users with no food at home.
-- Users unwilling to connect or simulate a Swiggy account.
+- Weekdays after work, roughly 7:30-10:00 p.m.
+- User is hungry, tired, and wants an acceptable outcome quickly.
 
-## Product Hypothesis
+Why this cohort:
 
-Users with a partial dinner state will convert more often when Swiggy recommends one compatible missing component than when they are sent into standard marketplace discovery.
+- Dinner is frequent.
+- Decision fatigue is real.
+- Swiggy usage is familiar.
+- Partial-meal states are plausible.
+- Incremental order upside exists if the product converts "I will manage somehow" into "I need only this one thing."
 
-The recommendation must explain:
+## Why This Is Not Generic Food Discovery
 
-- What the user already has.
-- What is missing.
-- What to obtain.
-- Why the proposed item completes dinner.
-- Which surface is being used: Food or Instamart.
-- What assumptions were made.
+Generic discovery starts from supply:
 
-## Core Experience
+1. Restaurants.
+2. Dishes.
+3. Offers.
+4. Ratings.
+5. Delivery time.
+6. Price.
 
-1. User opens the PWA after work.
-2. User selects or describes what is already available at home.
-3. System searches Food and Instamart through read-only provider ports.
-4. System returns one primary recommendation.
-5. User gives fit feedback.
-6. No cart, checkout, payment, or order action occurs in M0.
+Finish My Dinner starts from demand context:
 
-Example outcomes:
+1. What is already at home?
+2. What is missing from a complete dinner?
+3. Can one Food or Instamart item solve that gap?
+4. Is the complement worth buying?
 
-| At home | Recommended complement | Surface |
-| --- | --- | --- |
-| Rice and curd | Rajma or chole | Swiggy Food |
-| Dal | Ready rotis and salad | Instamart |
-| Leftover biryani, not enough | Kebab side | Swiggy Food |
-| Bread and eggs | Ready soup or protein side | Instamart |
+That shift matters. The user is not asking for variety. They are trying to avoid another full dinner decision.
 
-## Validation Gates
+## Product Principles
 
-The product should continue only if the read-only study shows:
+1. **Start with home state**
+   The first input must be what the user already has, not cuisine or restaurant preference.
 
-| Gate | Target |
+2. **Recommend one primary commerce surface**
+   A session should choose Food or Instamart as the primary answer. Dual-surface complexity is out of scope for the current milestone.
+
+3. **Buy the minimum useful addition**
+   Prefer one complement over a full replacement meal when the partial meal is viable.
+
+4. **Make assumptions visible**
+   The user should see what the system believes is at home, what it thinks is missing, and why the recommendation works.
+
+5. **Stay read-only during validation**
+   The current product proves recommendation fit before introducing cart, checkout, payment, or ordering risk.
+
+## MVP Experience
+
+1. User opens Finish My Dinner.
+2. User selects a quick home-state chip or enters one short sentence.
+3. Product identifies the likely dinner gap.
+4. Product searches Food and Instamart through local deterministic provider stubs.
+5. Product recommends one complement.
+6. User gives feedback: useful, not useful, wrong assumption, too expensive, too slow, or already have it.
+
+Current milestone does **not** place orders.
+
+## What We Need To Prove
+
+This product is worth building only if the partial-meal state is frequent and solvable.
+
+Validation gates:
+
+| Question | Pass signal |
 | --- | --- |
-| Partial-meal frequency | Meaningful target users report this state at least twice weekly |
-| Input effort | Median home-state input time is at most 10 seconds |
-| Supply coverage | At least 70% of eligible sessions produce one acceptable single-surface complement |
-| Recommendation fit | Users understand and accept the proposed completion |
+| Does this state happen often enough? | Meaningful target users report partial dinner at least twice weekly |
+| Can users describe home food quickly? | Median input time at most 10 seconds |
+| Can Swiggy supply solve it? | At least 70% of eligible sessions produce one acceptable single-surface complement |
+| Does recommendation reduce effort? | Users prefer the recommendation over manual browsing for eligible cases |
 
-The thesis should be killed or materially reframed if partial-meal states are rare, input takes longer than browsing, users prefer full replacement meals, or Food/Instamart supply cannot cover enough cases.
+Kill or reframe if:
 
-## Success Metrics
+- Most users rarely have partial meals.
+- Input feels like pantry management.
+- Users still prefer full replacement meals.
+- Good complements are unavailable or uneconomical.
+- Price, ETA, or supply issues explain most abandonment.
 
-Primary:
+## Business Case For Swiggy
 
-- Eligible meal-completion conversion.
+This is a conversion and frequency bet, not an engagement gimmick.
+
+If validated, Finish My Dinner can:
+
+- Convert low-intent leftover/snack occasions into Swiggy transactions.
+- Increase weekday dinner frequency without requiring full-meal replacement.
+- Create a natural Food and Instamart bridge around a user outcome.
+- Reduce browse-exit-reopen loops by narrowing the decision.
+- Improve trust in agentic commerce through bounded, explicit recommendations.
+
+North-star direction:
+
+> Eligible partial-meal sessions converted into a completed dinner decision within 60 seconds.
+
+Supporting metrics:
+
 - Recommendation acceptance rate.
-- Median time from home-state input to recommendation.
-- Browse-to-feedback completion rate.
+- Median input-to-recommendation time.
+- Search success rate.
 - Seven-day repeat intent.
+- Incremental order intent versus manual discovery.
+- Reasons for rejection: price, ETA, assumption, taste fit, unavailable supply.
 
-Guardrails:
+## Competitive Boundary
 
-- No real cart mutation in M0.
-- No checkout or payment action in M0.
-- No medical, allergy, or nutrition suitability claims.
-- No raw addresses, tokens, payment data, or full provider payloads in model context.
-- No invented Swiggy tools, fields, prices, merchants, or availability states.
+Finish My Dinner is intentionally not:
 
-## Why Swiggy Could Care
+- A recipe generator like pantry-to-recipe apps.
+- A standard restaurant recommender.
+- A meal subscription.
+- A calorie, allergy, or medical suitability product.
+- A pantry inventory manager.
+- A fully autonomous shopping agent.
 
-Finish My Dinner targets incremental dinner occasions that may otherwise produce no Swiggy transaction: leftovers, snacks, reluctant cooking, tiffin consideration, or app abandonment.
+The wedge is narrower: **complete tonight's partial dinner with one useful purchase**.
 
-If validated, the opportunity is not more app engagement for its own sake. It is higher routine dinner conversion, lower decision fatigue, better Food/Instamart orchestration, and stronger retention among frequent weekday users.
+## Current Build Scope
 
-## What This Is Not
+Active milestone: `M0_READ_ONLY_VALIDATION`
 
-- Not a pantry manager.
-- Not a recipe app.
-- Not a generic food recommender.
-- Not a restaurant-discovery feed.
-- Not an autonomous ordering agent.
-- Not a nutrition, allergy, or medical advice product.
-- Not a unified Food + Instamart checkout in M0.
+Allowed:
 
-## Current Implementation
+- Local deterministic MCP stub.
+- Home-state capture.
+- Food and Instamart-like search through provider ports.
+- One primary recommendation.
+- Fit and intent feedback.
 
-This repository contains:
+Forbidden:
 
-- A pnpm TypeScript workspace.
-- A Next.js mobile-first PWA shell.
+- Cart mutation.
+- Checkout.
+- Order placement.
+- Coupon application.
+- Payment actions.
+- Production Swiggy mutation tests.
+
+This protects the product from building commerce risk before proving the user problem.
+
+## Implementation Snapshot
+
+The repository currently contains:
+
+- Next.js mobile-first PWA shell.
+- TypeScript monorepo with pnpm.
 - Shared Zod contracts for UI/API boundaries.
-- A deterministic planner package.
-- Local provider stubs for Food and Instamart-like discovery.
-- Read-only API orchestration for meal-completion recommendations.
-- Runtime capability checks that fail closed on unsafe configurations.
-
-Tracked public documents are intentionally limited to the product contract, agent contract, architecture summary, UI specification, and package-level README files.
-
-## Repository Layout
+- Deterministic planner package.
+- Local provider stubs.
+- Read-only API route for meal-completion recommendations.
+- Capability checks that fail closed outside read-only mode.
 
 ```text
 apps/
-  web/                 Next.js PWA and read-only API routes
+  web/                 PWA and read-only API routes
 packages/
-  contracts/           Shared request, response, state, and feedback schemas
+  contracts/           Shared schemas and state contracts
   planner/             Deterministic meal-completion planner
-  providers-stub/      Local deterministic provider data and adapters
+  providers-stub/      Local deterministic provider data
 docs/
   ARCHITECTURE.md      Public architecture summary
   design/UI_SPEC.md    Product UI specification
 ```
 
-## Local Setup
-
-Install dependencies:
+## Run Locally
 
 ```bash
 pnpm install --frozen-lockfile
-```
-
-Run all checks:
-
-```bash
 pnpm check
-```
-
-Start the web app:
-
-```bash
 pnpm --filter @finish-my-dinner/web dev
 ```
 
-Default local runtime is intentionally safe:
+Safe local defaults:
 
 ```text
 APP_ENV=local
@@ -186,25 +248,10 @@ ALLOW_REAL_SWIGGY_MUTATIONS=false
 ALLOW_REAL_SWIGGY_ORDERS=false
 ```
 
-## Safety Model
-
-The active milestone is read-only. The app must run against the local deterministic stub unless a later approved milestone explicitly enables staging integration.
-
-M0 forbids:
-
-- Cart mutation.
-- Checkout.
-- Order placement.
-- Coupon application.
-- Payment actions.
-- Production Swiggy mutation tests.
-
-Any future live Swiggy integration must validate current official Swiggy MCP references and live `tools/list` schemas before implementation.
-
 ## Source Brief
 
-This README is aligned with the product brief and working PRD captured in the accompanying Google Doc:
+This README reflects the product direction captured in the working Google Doc:
 
 <https://docs.google.com/document/d/1d8_zIcFOR1q8z7fIcP222Gq_Qpjs8BDlQ7scWIfnmUw/edit?usp=sharing>
 
-The repository contract remains governed by `AI_PRD.md` and the safety invariants in `AGENTS.md`.
+Repository behavior remains governed by `AI_PRD.md` and the safety invariants in `AGENTS.md`.
