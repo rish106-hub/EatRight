@@ -1,0 +1,19 @@
+README.md
+  s_41dad2c09a70d8::t_711b7fb09eff00 3,5,7,9,11-18,20,22,24,26,28-31,33,35,37-161,165-169,171-175,179,189-193,195-200,202,204,206,208,210
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "496b5fab67086bc90e9d67df6c8ed510a9742c4b",
+  "prompts": {},
+  "sessions": {
+    "s_41dad2c09a70d8": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f079e-dda7-7153-b50c-92f6d6b66cbd",
+        "model": "gpt-5.5"
+      },
+      "human_author": "RISHAV DEWAN <rishavdewan10@gmail.com>"
+    }
+  }
+}
