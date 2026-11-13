@@ -14,10 +14,10 @@
     "@finish-my-dinner/contracts": "workspace:*",
     "@finish-my-dinner/planner": "workspace:*",
     "@finish-my-dinner/providers-stub": "workspace:*",
-    "next": "16.0.10",
+    "next": "16.4.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "zod": "4.1.13"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",
