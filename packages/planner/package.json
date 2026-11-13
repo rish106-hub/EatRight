@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@finish-my-dinner/contracts": "workspace:*",
-    "zod": "4.1.13"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@finish-my-dinner/providers-stub": "workspace:*"
